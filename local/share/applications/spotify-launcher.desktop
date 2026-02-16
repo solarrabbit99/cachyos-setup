@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Spotify
+Exec=spotify-launcher --skip-update
+Type=Application
+Terminal=false
