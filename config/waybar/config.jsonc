@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["custom/logi-mouse", "custom/logi-headset"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "custom/spotify", "custom/fcitx5", "network"],
+    "clock": {
+        "format": "{:%a, %d %b %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3
+        }
+    },
+    "network": {
+        "format-wifi": "{icon} ",
+        "format-ethernet": "\udb83\udc9d ",
+        "format-disconnected": "\udb83\udc9c ",
+        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        }
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause --player=spotify",
+        "on-scroll-up": "playerctl previous --player=spotify",
+        "on-scroll-down": "playerctl next --player=spotify"
+    },
+    "custom/fcitx5": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/fcitx5-label.py",
+        "interval": 1 // if configured shorter, tooltips may not work correctly
+    },
+    "custom/logi-mouse": {
+      "exec": "~/.config/waybar/logi_battery_dbus.py /org/freedesktop/UPower/devices/battery_hidpp_battery_0 󰍽",
+      "return-type": "json",
+      "tail": true
+    },
+    "custom/logi-headset": {
+      "exec": "~/.config/waybar/logi_battery_poll.sh",
+      "return-type": "json",
+      "tail": true
+    }
+}

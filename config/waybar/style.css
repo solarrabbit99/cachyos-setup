@@ -1,0 +1,58 @@
+* {
+    font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
+    font-size: 13px;
+    min-height: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#waybar {
+    background: transparent;
+    color: #c6d0f5;
+    margin: 0px;
+    font-weight: 500;
+}
+
+#custom-fcitx5,
+#custom-logi-mouse,
+#custom-logi-headset,
+#clock,
+#network,
+#pulseaudio,
+#custom-spotify {
+    background-color: #1a1b26;
+    color: #c6d0f5;
+    padding: 0.4rem 0.7rem;
+    margin: 5px 0px; 
+    border-radius: 6px;
+    box-shadow: none;
+    min-width: 0;
+    border: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#custom-fcitx5:hover,
+#custom-logi-mouse:hover,
+#custom-logi-headset:hover,
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-spotify:hover {
+    background-color: rgba(153, 209, 219, 0.1); /* Brighter highlight */
+}
+
+#custom-logi-mouse,
+#pulseaudio {
+    border-radius: 6px 0 0 6px;
+}
+
+#custom-logi-headset,
+#network {
+    border-radius: 0 6px 6px 0;
+}
+
+#custom-spotify,
+#custom-fcitx5 {
+    border-radius: 0;
+}
+
